@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description"
+        content="This is the voting static website for the 'Decoupled SQS Application' sample AWS architecture.">
+    <meta name="author" content="Gus Antoniassi">
+    <title>Pick your favorite IDE</title>
+
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="alert-container container-fluid">
+        <div class="row">
+            <div class="col-sm-12 offset-sm-12 col-md-6 offset-md-6" id="alert-container">
+                <!-- Alerts will be dynamically inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="text-center mt-5">
+            <h1 class="font-weight-bold my-5">Vote for your favorite editor/IDE!</h1>
+        </div>
+        <div class="card-deck mb-3 text-center">
+            <div class="card mb-4 shadow-sm">
+                <div class="card-header">
+                    <h4 class="my-0 font-weight-normal">Visual Studio Code</h4>
+                </div>
+                <div class="card-body">
+                    <img class="img-fluid p-4" src="assets/img/vscode.png">
+                    <button type="button" class="btn btn-lg btn-block btn-success mt-4 vote-button" data-ide="vscode">
+                        Vote!
+                    </button>
+                </div>
+            </div>
+            <div class="card mb-4 shadow-sm">
+                <div class="card-header">
+                    <h4 class="my-0 font-weight-normal">Vim</h4>
+                </div>
+                <div class="card-body">
+                    <img class="img-fluid p-4" src="assets/img/vim.png">
+                    <button type="button" class="btn btn-lg btn-block btn-success mt-4 vote-button" data-ide="vim">
+                        Vote!
+                    </button>
+                </div>
+            </div>
+            <div class="card mb-4 shadow-sm">
+                <div class="card-header">
+                    <h4 class="my-0 font-weight-normal">IntelliJ</h4>
+                </div>
+                <div class="card-body">
+                    <img class="img-fluid px-4 pt-4 pb-3" src="assets/img/intellij.png">
+                    <small class="text-muted">* or any other JetBrains IDE</small>
+                    <button type="button" class="btn btn-lg btn-block btn-success mt-2 vote-button" data-ide="intellij">
+                        Vote!
+                    </button>
+                </div>
+            </div>
+            <div class="card mb-4 shadow-sm">
+                <div class="card-header">
+                    <h4 class="my-0 font-weight-normal">Eclipse</h4>
+                </div>
+                <div class="card-body">
+                    <img class="img-fluid p-4" src="assets/img/eclipse.png">
+                    <button type="button" class="btn btn-lg btn-block btn-success mt-4 vote-button" data-ide="eclipse">
+                        Vote!
+                    </button>
+                </div>
+            </div>
+            <div class="card mb-4 shadow-sm">
+                <div class="card-header">
+                    <h4 class="my-0 font-weight-normal">Atom</h4>
+                </div>
+                <div class="card-body">
+                    <img class="img-fluid p-4" src="assets/img/atom.png">
+                    <button type="button" class="btn btn-lg btn-block btn-success mt-4 vote-button" data-ide="atom">
+                        Vote!
+                    </button>
+                </div>
+            </div>
+            <div class="card mb-4 shadow-sm">
+                <div class="card-header">
+                    <h4 class="my-0 font-weight-normal">Sublime Text</h4>
+                </div>
+                <div class="card-body">
+                    <img class="img-fluid p-4" src="assets/img/sublime.png">
+                    <button type="button" class="btn btn-lg btn-block btn-success mt-4 vote-button" data-ide="sublime">
+                        Vote!
+                    </button>
+                </div>
+            </div>
+            <div class="card mb-4 shadow-sm">
+                <div class="card-header">
+                    <h4 class="my-0 font-weight-normal">Netbeans</h4>
+                </div>
+                <div class="card-body">
+                    <img class="img-fluid p-4" src="assets/img/netbeans.png">
+                    <button type="button" class="btn btn-lg btn-block btn-success mt-4 vote-button" data-ide="netbeans">
+                        Vote!
+                    </button>
+                </div>
+            </div>
+            <div class="card mb-4 shadow-sm">
+                <div class="card-header">
+                    <h4 class="my-0 font-weight-normal">Visual Studio</h4>
+                </div>
+                <div class="card-body">
+                    <img class="img-fluid p-4" src="assets/img/visualstudio.svg">
+                    <button type="button" class="btn btn-lg btn-block btn-success mt-4 vote-button"
+                        data-ide="visualstudio">
+                        Vote!
+                    </button>
+                </div>
+            </div>
+            <div class="card mb-4 shadow-sm">
+                <div class="card-header">
+                    <h4 class="my-0 font-weight-normal">Other</h4>
+                </div>
+                <div class="card-body">
+                    <img class="img-fluid p-4" src="assets/img/other.png">
+                    <button type="button" class="btn btn-lg btn-block btn-success mt-4 vote-button" data-ide="other">
+                        Vote!
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <footer class="pt-4 my-md-5 pt-md-5 border-top mb-4">
+            <div class="row">
+                <div class="col-12 col-md">
+                    <strong>Gus Antoniassi</strong> <small class="mb-3 text-muted">&copy; 2020</small>
+                    <small class="d-block text-muted my-1">Powered by <a
+                            href="https://getbootstrap.com">Bootstrap</a></small>
+                    <small class="d-block text-muted">All logos and trademarks are the property of their respective
+                        owners</small>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="assets/js/jquery-3.4.1.min.js" defer></script>
+    <script src="assets/js/main.js" defer></script>
+</body>
+
+</html>
