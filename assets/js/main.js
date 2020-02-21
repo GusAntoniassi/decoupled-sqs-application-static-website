@@ -6,14 +6,18 @@ function showDialog(message, level) {
         + '</button>'
         + '</div>'
     
-    $alert = $('<div>').html(html);
+    $alert = $('<div class="alert-item">').html(html);
     $alert.hide();
     $('#alert-container').append($alert);
-    $alert.fadeIn(200);
+    $alert.fadeIn(200).delay(3000).fadeOut(200);
+
+    window.setTimeout(function() {
+        $('#alert-container .alert-item:hidden').remove()
+    }, 3500)
 }
 
 $(function() {
-    var API_ENDPOINT = 'https://33dxm6mgj9.execute-api.us-east-2.amazonaws.com/v1/vote';
+    var API_ENDPOINT = '{{API_GATEWAY_URL}}/vote';
     
     // This avoids us importing 60kb of Bootstrap JS just to get the alert close effect
     $('body').on('click', 'button[data-dismiss="alert"]', function(e) {
@@ -27,14 +31,18 @@ $(function() {
 
     $('.vote-button').on('click', function() {
         var $button = $(this);
-        var ide = $button.data('ide');
+        var ide = $button.data('ide-id');
         $button.text('Loading...');
+
+        console.log(ide);
         
-        $.post({
+        $.ajax({
             url: API_ENDPOINT,
-            data: {
-                foo: 'bar'
-            }
+            type: 'post',
+            contentType: 'application/json',
+            data: JSON.stringify({
+                Vote: ide
+            })
         }).done(function() {
             showDialog('🎉 Vote recorded successfuly!', 'success');
         }).fail(function(jqXHR, textStatus, errorThrown) {
