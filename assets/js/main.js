@@ -17,7 +17,7 @@ function showDialog(message, level) {
 }
 
 $(function() {
-    var API_ENDPOINT = '{{API_GATEWAY_URL}}/vote';
+    var API_ENDPOINT = '{{API_GATEWAY_URL}}';
     
     // This avoids us importing 60kb of Bootstrap JS just to get the alert close effect
     $('body').on('click', 'button[data-dismiss="alert"]', function(e) {
